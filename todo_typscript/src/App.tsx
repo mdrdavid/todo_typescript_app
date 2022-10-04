@@ -1,19 +1,20 @@
 import React from 'react';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import NavBar from './components/navbar/Navbar';
+import Signup from './pages/signup/Signup';
+import Sigin from './pages/sigin/Sigin';
 
 const name = "david"
 function App() {
-  const user = {
-    firstName: "Angela",
-    lastName: "Davis",
-    role: "Professor",
-  }
-  const greet = () =>{
-    return user.lastName
-  }
   return (
     <div className="App">
-      <h1> {greet()} Hello Typscript</h1>
+      <Routes>
+        <Route index element={<Signup />} />
+        <Route path="signup" element={< Sigin />} />
+        {/* <Route path="todo" element={<TodoPage />} /> */}
+      </Routes>
+      <NavBar />
     </div>
   );
 }
